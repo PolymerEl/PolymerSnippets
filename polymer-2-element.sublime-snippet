@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-<link rel="import" href="$1/polymer/polymer.html">
+<link rel="import" href="${1:../../bower_components}/polymer/polymer.html">
 
 <!--
 A comment describing this element
