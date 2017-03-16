@@ -7,38 +7,38 @@ A comment describing this element
 
 Example:
 
-    <my-elem></my-elem>
+		<my-elem></my-elem>
 
 Example:
 
-    <my-elem>
-      <h2>Hello my-elem</h2>
-    </my-elem>
+		<my-elem>
+			<h2>Hello my-elem</h2>
+		</my-elem>
 
 @demo demo/index.html
 -->
 
 <dom-module id="$2">
-  <link rel="import" type="css" href="$3.css">
-  <template>
-    ${0:<h2>Hello [[prop1]]</h2>}
-  </template>
+	<link rel="import" type="css" href="$3.css">
+	<template>
+		${0:<h2>Hello [[prop1]]</h2>}
+	</template>
 
-  <script>
-    class ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g} extends Polymer.Element {
-      static get is() { return '$2'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: '$2'
-          }
-        };
-      }
-    }
+	<script>
+		class ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g} extends Polymer.Element {
+			static get is() { return '$2'; }
+			static get properties() {
+				return {
+					prop1: {
+						type: String,
+						value: '$2'
+					}
+				};
+			}
+		}
 
-    window.customElements.define(${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g}.is, ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g});
-  </script>
+		window.customElements.define(${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g}.is, ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g});
+	</script>
 </dom-module>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
