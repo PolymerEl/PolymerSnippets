@@ -1,0 +1,47 @@
+<snippet>
+	<content><![CDATA[
+<!--
+
+A comment describing this mixin
+
+-->
+<script>
+
+  window.myMixin = window.myMixin || {};
+	
+	/**
+   * @polymerMixin
+   */
+	myMixin.${1} = function(superClass) {
+	  
+	  return class extends superClass {
+	    constructor() {
+	      super();
+	      this.addEventListener('keypress', e => this.handlePress(e));
+	    }
+
+	    static get properties() {
+	      return {
+	        bar: {
+	          type: Object
+	        }
+	      };
+	    }
+
+	    static get observers() {
+	      return [ '_barChanged(bar.*)' ];
+	    }
+
+	    _barChanged(bar) { ... }
+
+	    handlePress(e) { console.log('key pressed: ' + e.charCode); }
+	  }
+	}
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mix</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+	<description>polymer 2.0 mixin</description>
+</snippet>
