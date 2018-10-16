@@ -1,11 +1,6 @@
 <snippet>
 	<content><![CDATA[
-<link rel="import" href="${1:../../bower_components}/polymer/polymer.html">
-
-<!--
-A comment describing this element
-
--->
+<link rel="import" href="${1:../}/polymer/polymer.html">
 
 <dom-module id="$2">
 	<template>
@@ -18,6 +13,18 @@ A comment describing this element
 	</template>
 
 	<script>
+		(function() {
+
+		/**
+		 * ## ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g}
+		 *
+		 * `<$2>` ${4:describe...}
+		 *
+		 * @memberof $3
+		 * @customElement
+     * @polymer
+     * @demo
+		 **/
 		class ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g} extends Polymer.Element {
 
 			static get is() { return '$2'; }
@@ -25,15 +32,24 @@ A comment describing this element
 			static get properties() {
 				return {
 					prop1: {
-						type: String,
-						value: '$2'
+						type: String
 					}
 				};
 			}
 		}
 
 		customElements.define(${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g}.is, ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g});
-		
+
+		if (!window.${3:PolymerEl}) {
+		  window.$3 = {};
+		}
+   
+   /* 
+    * @namespace MultiChart
+    */
+    window.$3.${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g} = ${2/(?:\<(\w)(\w*)\>)?\W*/\u$1\L$2\E/g};
+
+		})();
 	</script>
 </dom-module>
 ]]></content>
